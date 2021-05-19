@@ -19,7 +19,7 @@
 		UPDATE article
 		set updateDate = NOW(),
 		title = #{title},
-		body = #{body},
+		body = #{body}
 		WHERE id = #{aid}
 	</update>
 	
@@ -34,6 +34,11 @@
 		SELECT *
 		FROM article AS A
 		WHERE A.id = #{aid}
+		AND A.delStatus = 0
+	</select>
+	
+	<select id="getLastInsertId" resultType="int">
+		SELECT LAST_INSERT_ID()
 	</select>
 
 </mapper>

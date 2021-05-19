@@ -62,28 +62,28 @@ public class MpaUsrArticleController {
 		return articleService.doDelete(aid);
 	}
 	
-//	@RequestMapping("/mpaUsr/article/doModify")
-//	@ResponseBody
-//	public ResultData doModify(Integer aid, String title, String body)
-//	{
-//		if(Util.isEmpty(aid))
-//		{
-//			return new ResultData("F-1", "please write down the aid");
-//		}
-//		
-//		if(Util.isEmpty(title))
-//		{
-//			return new ResultData("F-2", "please write down the title");
-//		}
-//		
-//		if(Util.isEmpty(body))
-//		{
-//			return new ResultData("F-3", "please write down the body");
-//		}
-//		
-//		return articleService.doModify(aid, title, body);
-//		
-//	}
+	@RequestMapping("/mpaUsr/article/doModify")
+	@ResponseBody
+	public ResultData doModify(Integer aid, String title, String body)
+	{
+		if(Util.isEmpty(aid))
+		{
+			return new ResultData("F-1", "please write down the aid");
+		}
+		
+		if(Util.isEmpty(title))
+		{
+			return new ResultData("F-2", "please write down the title");
+		}
+		
+		if(Util.isEmpty(body))
+		{
+			return new ResultData("F-3", "please write down the body");
+		}
+		
+		return articleService.doModify(aid, title, body);
+		
+	}
 	
 	
 }

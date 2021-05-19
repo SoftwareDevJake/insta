@@ -3,6 +3,7 @@ package com.insta.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.insta.DTO.Article;
 import com.insta.DTO.ResultData;
 import com.insta.Dao.ArticleDao;
 
@@ -29,30 +30,48 @@ public class ArticleService {
 		int boardId = 3; //
 		int memberId = 3; //
 		articleDao.doAdd(boardId, memberId, title, body);
-		int aid = 1; //
+		int aid = articleDao.getLastInsertId(); //
 		
 		return new ResultData("S-1", "Added", "aid", aid);
 	}	
 	
 	public ResultData doDelete(Integer aid)
 	{
-		if(articleDao.FindAndDeleteAid(aid))
+		Article article = articleDao.getArticleById(aid);
+		if(isEmpty(article))
 		{
-			return new ResultData("S-1", aid + " is deleted", "aid", aid);
+			return new ResultData("F-2", aid + " article doesn't exist");
 		}
+		articleDao.FindAndDeleteAid(aid);
+		return new ResultData("S-1", aid + " is deleted", "aid", aid);
 		
-		return new ResultData("F-2", aid + " article doesn't exist");
 	}
 	
-//	public ResultData doModify(Integer aid, String title, String body)
-//	{
-//		Article article = articleDao.doModify(aid, title, body);
-//		
-//		if(article == null)
-//		{
-//			return new ResultData("F-4", aid + " doesn't exist");
-//		}
-//		return new ResultData("S-1", aid + " is modified", "article", article);
-//	}
+	private boolean isEmpty(Article article) {
+		if(article == null)
+		{
+			return true;
+		}
+		else if(article.isDelStatus())
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public ResultData doModify(Integer aid, String title, String body)
+	{
+		Article article = articleDao.getArticleById(aid);
+		
+		if(article == null)
+		{
+			return new ResultData("F-4", aid + " doesn't exist");
+		}
+		articleDao.doModify(aid, title, body);
+		article = articleDao.getArticleById(aid);
+		
+		return new ResultData("S-1", aid + " is modified", "article", article);
+	}
 }
  

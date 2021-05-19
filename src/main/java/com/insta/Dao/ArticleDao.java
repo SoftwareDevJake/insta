@@ -14,4 +14,5 @@ public interface ArticleDao {
 	boolean doModify(@Param("aid") Integer aid, @Param("title") String title, @Param("body") String body);
 	boolean FindAndDeleteAid(@Param("aid") Integer aid);
 	Article getArticleById(@Param("aid") Integer aid);
+	int getLastInsertId();
 }
