@@ -1,11 +1,8 @@
 package com.insta.service;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.insta.DTO.Article;
 import com.insta.DTO.ResultData;
 import com.insta.Dao.ArticleDao;
 
@@ -17,26 +14,24 @@ public class ArticleService {
 	@Autowired
 	private ArticleDao articleDao;
 	
-	public ArrayList<Article> showList()
-	{
-		return articleDao.showList();
-	}
-	
-	public Article showDetail(int aid)
-	{
-		return articleDao.showDetail(aid);
-	}
-	
+//	public ArrayList<Article> showList()
+//	{
+//		return articleDao.showList();
+//	}
+//	
+//	public Article showDetail(int aid)
+//	{
+//		return articleDao.showDetail(aid);
+//	}
+//	
 	public ResultData doAdd(String title, String body)
 	{
-		Article article = articleDao.doAdd(title, body);
+		int boardId = 3; //
+		int memberId = 3; //
+		articleDao.doAdd(boardId, memberId, title, body);
+		int aid = 1; //
 		
-		if(article == null)
-		{
-			return new ResultData("F-3", "Failed");
-		}
-		
-		return new ResultData("S-1", "Added", "article", article);
+		return new ResultData("S-1", "Added", "aid", aid);
 	}	
 	
 	public ResultData doDelete(Integer aid)
@@ -49,15 +44,15 @@ public class ArticleService {
 		return new ResultData("F-2", aid + " article doesn't exist");
 	}
 	
-	public ResultData doModify(Integer aid, String title, String body)
-	{
-		Article article = articleDao.doModify(aid, title, body);
-		
-		if(article == null)
-		{
-			return new ResultData("F-4", aid + " doesn't exist");
-		}
-		return new ResultData("S-1", aid + " is modified", "article", article);
-	}
+//	public ResultData doModify(Integer aid, String title, String body)
+//	{
+//		Article article = articleDao.doModify(aid, title, body);
+//		
+//		if(article == null)
+//		{
+//			return new ResultData("F-4", aid + " doesn't exist");
+//		}
+//		return new ResultData("S-1", aid + " is modified", "article", article);
+//	}
 }
  
