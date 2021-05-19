@@ -19,7 +19,7 @@ public class MpaUsrArticleController {
 	
 	
 //	@RequestMapping("/mpaUsr/article/list")
-//	@ResponseBody
+//	@ResponseBodyb
 //	public ArrayList<Article> showList()
 //	{
 //		return articleService.showList();

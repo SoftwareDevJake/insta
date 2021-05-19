@@ -5,8 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages={"com.insta.Dao", "com.insta.service.ArticleService"})
-@EnableAutoConfiguration(exclude= {DataSourceAutoConfiguration.class})
+@SpringBootApplication
 public class InstaApplication {
 
 	public static void main(String[] args) {

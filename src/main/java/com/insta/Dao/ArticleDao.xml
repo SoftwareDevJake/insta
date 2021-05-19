@@ -26,7 +26,7 @@
 	<update id="FindAndDeleteAid">
 		UPDATE article
 		set delStatus = 1,
-		delDate = NOW(),
+		delDate = NOW()
 		WHERE id = #{aid}
 	</update>
 	
