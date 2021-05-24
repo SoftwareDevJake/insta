@@ -5333,3 +5333,6 @@ Unconditional classes:
 
 
 2021-05-25 00:33:35 [INFO ] com.insta.InstaApplication - Started InstaApplication in 1.625 seconds (JVM running for 2.124)
+2021-05-25 00:35:47 [INFO ] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-05-25 00:35:47 [INFO ] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-05-25 00:35:47 [INFO ] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
