@@ -6,9 +6,10 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="/resource/common.css" />
 <script src="/resource/common.js" defer></script>
-<title>안녕</title>
+<title>안녕하세요</title>
 </head>
 <body>
+ㅋㅋㅋ
 	<button onclick="hello();">안녕하세요.</button>
 </body>
 </html>

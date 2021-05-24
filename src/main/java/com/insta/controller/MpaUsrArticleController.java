@@ -16,15 +16,14 @@ public class MpaUsrArticleController {
 	
 	@Autowired
 	private ArticleService articleService;
+	// 5:30 메인화면 바꾸기, 공통 레이아웃
 	
+	@RequestMapping("/mpaUsr/article/list")
+	public String showList()
+	{
+		return "/mpaUsr/article/list";
+	}
 	
-//	@RequestMapping("/mpaUsr/article/list")
-//	@ResponseBodyb
-//	public ArrayList<Article> showList()
-//	{
-//		return articleService.showList();
-//	}
-//	
 //	@RequestMapping("/mpaUsr/article/detail")
 //	@ResponseBody
 //	public Article showDetail(int aid)

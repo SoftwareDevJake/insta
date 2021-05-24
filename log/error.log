@@ -322,3 +322,31 @@ Caused by: java.lang.IllegalStateException: Cannot load driver class: net.sf.log
 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
 	... 79 common frames omitted
+2021-05-25 00:28:32 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8024 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8024 or configure this application to listen on another port.
+
+2021-05-25 00:28:57 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8024 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8024 or configure this application to listen on another port.
+
