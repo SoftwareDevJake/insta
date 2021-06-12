@@ -175,6 +175,11 @@ html > body .plain-link:hover {
 }
 
 
+/* 탑바 시작 */
+:root {
+  --top-bar__color-1:#f1f1f1;
+}
+
 .top-bar {
   /* .bg-white */
   background-color:white;
@@ -183,21 +188,22 @@ html > body .plain-link:hover {
   --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   
-  /* .h-20 */
-  height: 5rem;
+  height: 3rem;
 }
 
+/* 탑바 - 메뉴 박스 시작 */
 .top-bar .menu-box-1 {
   overflow-x:auto;
 }
 
+/* 탑바 - 메뉴 박스 - 터치 불가능한 경우 스크롤바 제거 */
 .touch-imposible .menu-box-1::-webkit-scrollbar
 {
   width: 0;
   height: 0;
 }
 
-/* 제거 가능 */
+/* 탑바 - 메뉴 박스 - 더보기 그림자 시작 */
 .top-bar .container {
   position:relative;
 }
@@ -210,12 +216,51 @@ box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #
   width:40px;
   height:100%;
   background-image:linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+  pointer-events:none;
 }
-/* 제거 가능 */
+/* 탑바 - 메뉴 박스 - 더보기 그림자 끝 */
 
+/* 탑바 - 메뉴 박스 - 아이템 시작 */
 .top-bar .menu-box-1 ul > li > a > span {
   white-space:nowrap;
 }
+
+.top-bar .menu-box-1 ul > li:hover > a {
+  background-color:var(--top-bar__color-1);
+}
+/* 탑바 - 메뉴 박스 - 아이템 끝 */
+
+/* 탑바 - 메뉴 박스 - 2차 메뉴 시작 */
+.top-bar .menu-box-1 > ul > li:hover > div {
+  display:block;
+}
+
+.top-bar .menu-box-1 > ul > li > div {
+  position:fixed;
+  left:0;
+  width:100%;
+  display:none;
+  background-color:white;
+  /* .shadow-lg */
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.top-bar .menu-box-1 > ul > li > div > h1 > a {
+  display:flex;
+  background-color:flex;
+  justify-content:center;
+  padding:.5rem 0;
+  background-color:var(--top-bar__color-1);
+}
+
+.top-bar .menu-box-1 > ul > li > div > ul > li > a {
+  display:flex;
+  background-color:flex;
+  justify-content:center;
+  padding:.5rem 0;
+}
+/* 탑바 - 메뉴 박스 - 2차 메뉴 끝 */
 
 .top-bar--fly {
   top:0;
@@ -224,35 +269,4 @@ box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #
   z-index:50;
   position:fixed;
 }
-
-
-/*
-
-
-@media ( max-width: 768px ) {
-  .md\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-}
-
-@media ( max-width: 1024px ) {
-  .lg\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-}
-
-@media ( max-width: 1280px ) {
-  .xl\:col-span-3 {
-    grid-column: span 3 / span 3;
-  }
-}
-*/
-
-/*
-None	width: 100%;
-sm (640px)	max-width: 640px;
-md (768px)	max-width: 768px;
-lg (1024px)	max-width: 1024px;
-xl (1280px)	max-width: 1280px;
-2xl (1536px)	max-width: 1536px;
-*/
+/* 탑바 끝 */
