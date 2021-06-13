@@ -19,8 +19,9 @@ public class MpaUsrArticleController {
 	// 5:30 메인화면 바꾸기, 공통 레이아웃
 	
 	@RequestMapping("/mpaUsr/article/list")
-	public String showList()
+	public String showList(Integer boardId)
 	{
+		
 		return "/mpaUsr/article/list";
 	}
 	
