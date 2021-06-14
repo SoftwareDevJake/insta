@@ -2919,3 +2919,12 @@ Stacktrace:
 2021-06-14 13:58:44 [DEBUG] o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.template.provider.cache' in PropertySource 'configurationProperties' with value of type String
 2021-06-14 13:58:44 [DEBUG] o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.mvc.view.prefix' in PropertySource 'configurationProperties' with value of type String
 2021-06-14 13:58:44 [DEBUG] o.s.c.e.PropertySourcesPropertyResolver - Found key 'spring.mvc.view.suffix' in PropertySource 'configurationProperties' with value of type String
+2021-06-14 14:02:13 [INFO ] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2021-06-14 14:02:13 [DEBUG] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1115fd2b, started on Mon Jun 14 13:44:50 KST 2021
+2021-06-14 14:02:13 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+2021-06-14 14:02:13 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerGracefulShutdown' completed its stop procedure
+2021-06-14 14:02:13 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483646
+2021-06-14 14:02:13 [DEBUG] o.s.c.s.DefaultLifecycleProcessor - Bean 'webServerStartStop' completed its stop procedure
+2021-06-14 14:02:13 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2021-06-14 14:02:13 [DEBUG] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+2021-06-14 14:02:13 [INFO ] o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
