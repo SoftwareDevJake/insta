@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.insta.Util;
+import com.insta.DTO.Board;
 import com.insta.DTO.ResultData;
 import com.insta.service.ArticleService;
 
@@ -21,6 +22,12 @@ public class MpaUsrArticleController {
 	@RequestMapping("/mpaUsr/article/list")
 	public String showList(Integer boardId)
 	{
+		Board board = articleService.getBoardById(boardId);
+		
+		if(Util.isEmpty(board))
+		{
+			return "Board does not exist";
+		}
 		
 		return "/mpaUsr/article/list";
 	}

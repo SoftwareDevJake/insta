@@ -40,5 +40,12 @@
 	<select id="getLastInsertId" resultType="int">
 		SELECT LAST_INSERT_ID()
 	</select>
+	
+	<select id="getBoardById" resultType="Board">
+		SELECT *
+		FROM Board AS B
+		WHERE B.id = #{aid}
+		AND B.delStatus = 0
+	</select>
 
 </mapper>

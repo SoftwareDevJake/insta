@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.insta.DTO.Article;
+import com.insta.DTO.Board;
 import com.insta.DTO.ResultData;
 import com.insta.Dao.ArticleDao;
 
@@ -72,6 +73,11 @@ public class ArticleService {
 		article = articleDao.getArticleById(aid);
 		
 		return new ResultData("S-1", aid + " is modified", "article", article);
+	}
+
+	public Board getBoardById(Integer aid) {
+		
+		return articleDao.getBoardById(aid);
 	}
 }
  

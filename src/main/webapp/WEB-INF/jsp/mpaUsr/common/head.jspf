@@ -32,7 +32,7 @@
 	<div class="site-wrap">
 		<header class="top-bar h-10 top-bar--fly">
 			<div class="container mx-auto flex h-full">
-				<a href="/" class="px-3 flex items-center">
+				<a href="/mpaUsr/home/main" class="px-3 flex items-center">
 					<span>
 						<i class="fas fa-lemon"></i>
 					</span>
@@ -45,7 +45,7 @@
 					<ul class="flex h-full">
 
 						<li>
-							<a href="/" class="h-full flex items-center px-5">
+							<a href="/mpaUsr/home/main" class="h-full flex items-center px-5">
 								<span>
 									<i class="fas fa-home"></i>
 								</span>
@@ -71,7 +71,7 @@
 								</h1>
 								<ul>
 									<li>
-										<a href="/mpaUsr/article/list">
+										<a href="/mpaUsr/article/list?boardId=1">
 											<span>
 												<i class="far fa-clipboard"></i>
 											</span>

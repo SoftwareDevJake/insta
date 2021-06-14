@@ -4,6 +4,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
 import com.insta.DTO.Article;
+import com.insta.DTO.Board;
 
 // 기능 구현
 
@@ -15,4 +16,5 @@ public interface ArticleDao {
 	boolean FindAndDeleteAid(@Param("aid") Integer aid);
 	Article getArticleById(@Param("aid") Integer aid);
 	int getLastInsertId();
+	Board getBoardById(@Param("aid") Integer aid);
 }
