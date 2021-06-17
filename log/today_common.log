@@ -21904,3 +21904,5 @@ Unconditional classes:
 2021-06-17 14:08:04 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - After adding stats (total=10, active=0, idle=10, waiting=0)
 2021-06-17 14:08:34 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Pool stats (total=10, active=0, idle=10, waiting=0)
 2021-06-17 14:08:34 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Fill pool skipped, pool is at sufficient level.
+2021-06-17 14:09:04 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Pool stats (total=10, active=0, idle=10, waiting=0)
+2021-06-17 14:09:04 [DEBUG] com.zaxxer.hikari.pool.HikariPool - HikariPool-5 - Fill pool skipped, pool is at sufficient level.
