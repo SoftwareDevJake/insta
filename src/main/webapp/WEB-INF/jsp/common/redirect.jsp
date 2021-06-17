@@ -7,7 +7,19 @@ const alertMsg = '${msg}'.trim();
 if(alertMsg)
 	{
 		alert(alertMsg);
-	
 	}
-history.back();
+	
+const historyBack = '${historyBack}' == 'true';
+
+if(historyBack)
+	{
+		history.back();
+	}
+	
+const replaceUrl = '${replaceUrl}'.trim();
+
+if(replaceUrl)
+	{
+		location.replace(replaceUrl);	
+	}
 </script>

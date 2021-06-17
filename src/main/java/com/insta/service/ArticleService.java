@@ -41,10 +41,10 @@ public class ArticleService {
 		Article article = articleDao.getArticleById(aid);
 		if(isEmpty(article))
 		{
-			return new ResultData("F-2", aid + " article doesn't exist");
+			return new ResultData("F-1", aid + " doesnt exist");
 		}
 		articleDao.FindAndDeleteAid(aid);
-		return new ResultData("S-1", aid + " is deleted", "aid", aid);
+		return new ResultData("S-1", aid + " is deleted", "aid", aid, "boardId", article.getBoardId());
 		
 	}
 	
