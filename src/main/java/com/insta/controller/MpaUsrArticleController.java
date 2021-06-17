@@ -1,5 +1,7 @@
 package com.insta.controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +22,7 @@ public class MpaUsrArticleController {
 	// 5:30 메인화면 바꾸기, 공통 레이아웃
 	
 	@RequestMapping("/mpaUsr/article/list")
-	public String showList(Integer boardId)
+	public String showList(HttpServletRequest req, Integer boardId)
 	{
 		Board board = articleService.getBoardById(boardId);
 		
@@ -28,6 +30,8 @@ public class MpaUsrArticleController {
 		{
 			return "Board does not exist";
 		}
+		
+		req.setAttribute("board", board);
 		
 		return "/mpaUsr/article/list";
 	}
