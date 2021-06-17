@@ -167,3 +167,31 @@ Action:
 
 Identify and stop the process that's listening on port 8024 or configure this application to listen on another port.
 
+2021-06-17 14:14:55 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8024 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8024 or configure this application to listen on another port.
+
+2021-06-17 14:17:57 [ERROR] o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8024 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8024 or configure this application to listen on another port.
+
