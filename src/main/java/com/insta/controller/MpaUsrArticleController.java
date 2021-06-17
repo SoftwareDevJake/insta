@@ -28,7 +28,8 @@ public class MpaUsrArticleController {
 		
 		if(Util.isEmpty(board))
 		{
-			return "Board does not exist";
+			req.setAttribute("msg", boardId + "번 게시판이 존재하지 않습니다.");
+			return "common/redirect";
 		}
 		
 		req.setAttribute("board", board);
