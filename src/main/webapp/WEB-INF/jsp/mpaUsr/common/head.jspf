@@ -71,7 +71,7 @@
 								</h1>
 								<ul>
 									<li>
-										<a href="/mpaUsr/article/list?boardId=1">
+										<a href="/mpaUsr/article/list?boardId=1&page=1">
 											<span>
 												<i class="far fa-clipboard"></i>
 											</span>

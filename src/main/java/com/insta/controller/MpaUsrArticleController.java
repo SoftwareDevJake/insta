@@ -1,13 +1,17 @@
 package com.insta.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.insta.Util;
+import com.insta.DTO.Article;
 import com.insta.DTO.Board;
 import com.insta.DTO.ResultData;
 import com.insta.service.ArticleService;
@@ -34,7 +38,7 @@ public class MpaUsrArticleController {
 	}
 	
 	@RequestMapping("/mpaUsr/article/list")
-	public String showList(HttpServletRequest req, Integer boardId)
+	public String showList(HttpServletRequest req, Integer boardId, @RequestParam(defaultValue = "1") int page)
 	{
 		Board board = articleService.getBoardById(boardId);
 		
@@ -48,6 +52,16 @@ public class MpaUsrArticleController {
 		int totalItemsCount = articleService.getArticlesTotalCount(boardId);
 		
 		req.setAttribute("totalItemsCount", totalItemsCount);
+		
+		int itemsCountInAPage = 20;
+		int totalPage = (int) Math.ceil(totalItemsCount / (double) itemsCountInAPage);
+		
+		req.setAttribute("totalPage", totalPage);
+		
+		List<Article> articles = articleService.getForPrintArticles(boardId, itemsCountInAPage, page);
+		
+		req.setAttribute("articles", articles);
+		req.setAttribute("page", page);
 		
 		return "/mpaUsr/article/list";
 	}

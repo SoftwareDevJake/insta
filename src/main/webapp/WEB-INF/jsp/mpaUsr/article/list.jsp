@@ -8,8 +8,31 @@
 
 <div class="section section-article-list">
 	<div class="container mx-auto">
-		<span>TOTAL ITEMS : </span>
-		<span>${totalItemsCount}</span>
+		<div class="page">
+			<span>CURRENT PAGE : </span>
+			<span>${page}</span>
+		</div>
+		
+		<div class="total-items">
+			<span>TOTAL ITEMS : </span>
+			<span>${totalItemsCount}</span>
+		</div>
+		
+		<div class="total-pages">
+			<span>TOTAL PAGES : </span>
+			<span>${totalPage}</span>
+		</div>
+		
+		<div class="articles">
+			<c:forEach items="${articles}" var="article">
+				<div>
+					ID : ${article.id}<br>
+					CURRENT DATE : ${article.currentDate}<br>
+					UPDATE DATE : ${article.updateDate}<br>
+					TITLE : ${article.title}<br>
+				</div>
+			</c:forEach>
+		</div>
 	</div>
 </div>
 

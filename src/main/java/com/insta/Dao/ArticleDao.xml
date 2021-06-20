@@ -54,5 +54,13 @@
 		WHERE a.boardId = #{boardId}
 		AND a.delStatus = 0
 	</select>
+	
+	<select id="getForPrintArticles" resultType="Article">
+		SELECT *
+		FROM article AS a
+		WHERE a.boardId = #{boardId}
+		ORDER BY a.id DESC
+		LIMIT #{limitFrom}, #{limitTake}
+	</select>
 
 </mapper>
