@@ -47,5 +47,12 @@
 		WHERE B.id = #{aid}
 		AND B.delStatus = 0
 	</select>
+	
+	<select id="getArticlesTotalCount" resultType="int">
+		SELECT COUNT(*)
+		FROM article AS a
+		WHERE a.boardId = #{boardId}
+		AND a.delStatus = 0
+	</select>
 
 </mapper>

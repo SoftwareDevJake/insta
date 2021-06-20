@@ -31,7 +31,7 @@ public class ArticleService {
 		int boardId = 3; //
 		int memberId = 3; //
 		articleDao.doAdd(boardId, memberId, title, body);
-		int aid = articleDao.getLastInsertId(); //
+		int aid = articleDao.getLastInsertId(); //b 
 		
 		return new ResultData("S-1", "Added", "aid", aid);
 	}	
@@ -78,6 +78,10 @@ public class ArticleService {
 	public Board getBoardById(Integer aid) {
 		
 		return articleDao.getBoardById(aid);
+	}
+
+	 public int getArticlesTotalCount(Integer boardId) {
+		return articleDao.getArticlesTotalCount(boardId);
 	}
 }
  

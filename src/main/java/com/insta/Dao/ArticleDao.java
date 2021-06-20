@@ -17,4 +17,5 @@ public interface ArticleDao {
 	Article getArticleById(@Param("aid") Integer aid);
 	int getLastInsertId();
 	Board getBoardById(@Param("aid") Integer aid);
+	int getArticlesTotalCount(@Param("boardId") Integer boardId);
 }
