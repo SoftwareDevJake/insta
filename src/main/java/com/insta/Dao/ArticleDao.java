@@ -19,6 +19,6 @@ public interface ArticleDao {
 	Article getArticleById(@Param("aid") Integer aid);
 	int getLastInsertId();
 	Board getBoardById(@Param("aid") Integer aid);
-	int getArticlesTotalCount(@Param("boardId") Integer boardId);
-	List<Article> getForPrintArticles(@Param("boardId") Integer boardId, @Param("limitFrom") int limitFrom, @Param("limitTake") int limitTake);
+	int getArticlesTotalCount(@Param("boardId") Integer boardId, @Param("searchKeyword") String searchKeyword);
+	List<Article> getForPrintArticles(@Param("boardId") Integer boardId, @Param("searchKeyword") String searchKeyword, @Param("limitFrom") int limitFrom, @Param("limitTake") int limitTake);
 }
