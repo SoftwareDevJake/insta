@@ -16,9 +16,12 @@ import com.insta.DTO.Board;
 import com.insta.DTO.ResultData;
 import com.insta.service.ArticleService;
 
+import lombok.extern.slf4j.Slf4j;
+
 // 간단한 업무, 알림
 
 @Controller
+@Slf4j
 public class MpaUsrArticleController {
 	
 	@Autowired
@@ -30,7 +33,7 @@ public class MpaUsrArticleController {
 		req.setAttribute("historyBack", true);
 		return "common/redirect";
 	}
-	
+		
 	private String msgAndReplace(HttpServletRequest req, String msg, String replaceUrl) {
 		req.setAttribute("msg", msg);
 		req.setAttribute("replaceUrl", replaceUrl);
@@ -38,9 +41,11 @@ public class MpaUsrArticleController {
 	}
 	
 	@RequestMapping("/mpaUsr/article/list")
-	public String showList(HttpServletRequest req, Integer boardId, @RequestParam(defaultValue = "1") int page)
+	public String showList(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer boardId, String searchKeyword, @RequestParam(defaultValue = "1") int page)
 	{
 		Board board = articleService.getBoardById(boardId);
+		
+		log.debug("searchKeyword : " + searchKeyword);
 		
 		if(Util.isEmpty(board))
 		{
