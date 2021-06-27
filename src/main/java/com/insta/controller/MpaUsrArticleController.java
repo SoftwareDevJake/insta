@@ -41,9 +41,14 @@ public class MpaUsrArticleController {
 	}
 	
 	@RequestMapping("/mpaUsr/article/list")
-	public String showList(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer boardId, String searchKeyword, @RequestParam(defaultValue = "1") int page)
+	public String showList(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer boardId, String searchKeywordType, String searchKeyword, @RequestParam(defaultValue = "1") int page)
 	{
 		Board board = articleService.getBoardById(boardId);
+		
+		if(Util.isEmpty(searchKeywordType))
+		{
+			searchKeywordType = "titleAndBody";
+		}
 		
 		log.debug("searchKeyword : " + searchKeyword);
 		
@@ -54,7 +59,7 @@ public class MpaUsrArticleController {
 		
 		req.setAttribute("board", board);
 		
-		int totalItemsCount = articleService.getArticlesTotalCount(boardId, searchKeyword);
+		int totalItemsCount = articleService.getArticlesTotalCount(boardId, searchKeywordType, searchKeyword);
 		
 		req.setAttribute("totalItemsCount", totalItemsCount);
 		
@@ -63,7 +68,7 @@ public class MpaUsrArticleController {
 		
 		req.setAttribute("totalPage", totalPage);
 		
-		List<Article> articles = articleService.getForPrintArticles(boardId, searchKeyword, itemsCountInAPage, page);
+		List<Article> articles = articleService.getForPrintArticles(boardId, searchKeywordType, searchKeyword, itemsCountInAPage, page);
 		
 		req.setAttribute("articles", articles);
 		req.setAttribute("page", page);

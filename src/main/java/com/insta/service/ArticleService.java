@@ -78,19 +78,27 @@ public class ArticleService {
 	}
 
 	public Board getBoardById(Integer aid) {
-		
 		return articleDao.getBoardById(aid);
 	}
 
-	 public int getArticlesTotalCount(Integer boardId, String searchKeyword) {
-		return articleDao.getArticlesTotalCount(boardId, searchKeyword);
+	 public int getArticlesTotalCount(Integer boardId, String searchKeywordType, String searchKeyword) {
+		if(searchKeyword != null && searchKeyword.length() == 0)
+		{
+			searchKeyword = null;
+		}
+		return articleDao.getArticlesTotalCount(boardId, searchKeywordType, searchKeyword);
 	}
 
-	public List<Article> getForPrintArticles(Integer boardId, String searchKeyword, int itemsCountInAPage, int page) {
+	public List<Article> getForPrintArticles(Integer boardId, String searchKeywordType, String searchKeyword, int itemsCountInAPage, int page) {
 		int limitFrom = (page - 1) * itemsCountInAPage;
 		int limitTake = itemsCountInAPage;
 		
-		return articleDao.getForPrintArticles(boardId, searchKeyword, limitFrom, limitTake);
+		if(searchKeyword != null && searchKeyword.length() == 0)
+		{
+			searchKeyword = null;
+		}
+		
+		return articleDao.getForPrintArticles(boardId, searchKeywordType, searchKeyword, limitFrom, limitTake);
 	}
 }
  
