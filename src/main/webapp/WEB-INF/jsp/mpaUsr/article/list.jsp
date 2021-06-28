@@ -23,7 +23,17 @@
 			<span>${totalPage}</span>
 		</div>
 		
-		<div class="articles">
+		<hr />
+		<hr />
+		
+		<div class="search-form-box mt-2">
+			<form action="" class="grid gap-2">
+				<input class="input input-bordered" name="searchKeyword" type="text" placeholder="검색어를 입력해주세요." maxlength="10" />
+				<input type="submit" class="btn btn-sm btn-primary" value="검색" /> 
+			</form>
+		</div>
+		
+		<div class="articles mt-2">
 			<c:forEach items="${articles}" var="article">
 				<div>
 					ID : ${article.id}<br>
