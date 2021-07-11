@@ -83,6 +83,21 @@ public class MpaUsrArticleController {
 //		return articleService.showDetail(aid);
 //	}
 	
+	@RequestMapping("/mpaUsr/article/write")
+	public String showWrite(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer boardId)
+	{
+		Board board = articleService.getBoardById(boardId);
+		
+		if(Util.isEmpty(board))
+		{
+			return msgAndBack(req, boardId + "번 게시판이 존재하지 않습니다.");
+		}
+		
+		req.setAttribute("board", board);
+		
+		return "/mpaUsr/article/write";
+	}
+	
 	@RequestMapping("/mpaUsr/article/doAdd")
 	@ResponseBody
 	public ResultData doAdd(String title, String body)
