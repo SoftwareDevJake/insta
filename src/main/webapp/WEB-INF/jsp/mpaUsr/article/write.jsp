@@ -22,6 +22,21 @@
 				</label>
 				<textarea class="textarea textarea-bordered w-full h-24" placeholder="내용을 입력해주세요."name="body" maxlength="100"></textarea>
 			</div>
+			
+			<div class="mt-4 btn-wrap gap-1">
+				<a href="#" class="btn btn-primary btn-sm mb-1">
+					<span><i class="fas fa-save"></i></span>
+					&nbsp;
+					<span>작성</span>
+				</a>
+			
+				<a href="#" class="btn btn-sm mb-1" title="자세히 보기">
+					<span><i class="fas fa-list"></i></span>
+					&nbsp;
+					<span>리스트</span>
+				</a>
+			</div>
+			
 		</form>
 	</div>
 </div>
