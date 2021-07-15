@@ -22,5 +22,4 @@ public class Board {
 	private int dislikeCount;
 	private int hitCount;
 	private int repliesCount;
-
 }

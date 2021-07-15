@@ -24,5 +24,15 @@ public class Article {
 	private int dislikeCount;
 	private int hitCount;
 	private int repliesCount;
-
+	
+	private String extra__writerName;
+	
+	public String getBodyForPrint()
+	{
+		String bodyForPrint = body.replaceAll("\r\n", "<br>");
+		bodyForPrint = bodyForPrint.replaceAll("\r", "<br>");
+		bodyForPrint = bodyForPrint.replaceAll("\n", "<br>");
+		
+		return bodyForPrint;
+	}
 }

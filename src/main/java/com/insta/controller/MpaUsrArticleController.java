@@ -86,7 +86,7 @@ public class MpaUsrArticleController {
 	@RequestMapping("/mpaUsr/article/detail")
 	public String showDetail(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer aid)
 	{
-		Article article = articleService.getArticleById(aid);
+		Article article = articleService.getForPrintArticleById(aid);
 		if(article == null)
 		{
 			return msgAndBack(req, aid + "번 게시물이 존재하지 않습니다.");
@@ -95,6 +95,8 @@ public class MpaUsrArticleController {
 		Board board = articleService.getBoardById(article.getBoardId());
 		
 		req.setAttribute("article", article);
+		
+		log.debug("article : " + article);
 		
 		req.setAttribute("board", board);
 		
@@ -138,7 +140,7 @@ public class MpaUsrArticleController {
 			return msgAndBack(req, writeArticleRd.getMsg());
 		}
 		
-		String replaceUrl = "detail?id=" + writeArticleRd.getBody().get("aid");
+		String replaceUrl = "detail?aid=" + writeArticleRd.getBody().get("aid");
 		
 		return msgAndReplace(req, writeArticleRd.getMsg(), replaceUrl);
 	}
