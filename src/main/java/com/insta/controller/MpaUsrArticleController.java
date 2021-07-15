@@ -83,6 +83,24 @@ public class MpaUsrArticleController {
 //		return articleService.showDetail(aid);
 //	}
 	
+	@RequestMapping("/mpaUsr/article/detail")
+	public String showDetail(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer aid)
+	{
+		Article article = articleService.getArticleById(aid);
+		if(article == null)
+		{
+			return msgAndBack(req, aid + "번 게시물이 존재하지 않습니다.");
+		}
+		
+		Board board = articleService.getBoardById(article.getBoardId());
+		
+		req.setAttribute("article", article);
+		
+		req.setAttribute("board", board);
+		
+		return "/mpaUsr/article/detail";
+	}
+	
 	@RequestMapping("/mpaUsr/article/write")
 	public String showWrite(HttpServletRequest req, @RequestParam(defaultValue = "1") Integer boardId)
 	{
