@@ -99,7 +99,7 @@ public class MpaUsrArticleController {
 	}
 	
 	@RequestMapping("/mpaUsr/article/doAdd")
-	public String doAdd(HttpServletRequest req, String title, String body)
+	public String doAdd(HttpServletRequest req, int boardId,  String title, String body)
 	{
 		if(Util.isEmpty(title))
 		{
@@ -111,7 +111,9 @@ public class MpaUsrArticleController {
 			return msgAndBack(req, "내용을 입력해주세요.");
 		}
 		
-		ResultData writeArticleRd = articleService.doAdd(title, body);
+		int memberId = 3; // 임시 갚
+		
+		ResultData writeArticleRd = articleService.doAdd(boardId, memberId, title, body);
 		
 		if(writeArticleRd.isFail())
 		{

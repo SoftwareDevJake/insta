@@ -28,10 +28,8 @@ public class ArticleService {
 //		return articleDao.showDetail(aid);
 //	}
 //	
-	public ResultData doAdd(String title, String body)
+	public ResultData doAdd(int boardId, int memberId, String title, String body)
 	{
-		int boardId = 3; //
-		int memberId = 3; //
 		articleDao.doAdd(boardId, memberId, title, body);
 		int aid = articleDao.getLastInsertId(); //b 
 		
