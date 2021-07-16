@@ -1,12 +1,15 @@
 package com.insta.controller;
 
-import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.insta.Util;
+import com.insta.DTO.Member;
+import com.insta.DTO.ResultData;
+import com.insta.service.MemberService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,6 +19,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class MpaUsrMemeberController {
 	
+	@Autowired
+	private MemberService memberService;
+	
 	@RequestMapping("/mpaUsr/member/join")
 	public String showJoin()
 	{
@@ -24,11 +30,23 @@ public class MpaUsrMemeberController {
 	}
 	
 	@RequestMapping("/mpaUsr/member/doJoin")
-	@ResponseBody
-	public Map doJoin(String loginId, String loginPw, String name, String nickname, String cellphoneNo, String email)
+	public String doJoin(HttpServletRequest req,String loginId, String loginPw, String name, String nickname, String cellphoneNo, String email)
 	{
-		return Util.mapOf("loginId", loginId, "loginPw", loginPw, "name", name, "nickname", nickname, "cellphoneNo", cellphoneNo, "email", email);
-//		return "/mpaUsr/member/doJoin";
+		Member oldMember = memberService.getMemberByLoginId(loginId);
+		
+		if(oldMember != null)
+		{
+			return Util.msgAndBack(req, loginId + "(은)는 이미 사용중인 로그인 아이디 입니다.");
+		}
+		
+		ResultData joinRd = memberService.join(loginId,loginPw,name,nickname,cellphoneNo,email);
+		
+		if(joinRd.isFail())
+		{
+			return Util.msgAndBack(req, joinRd.getMsg());
+		}
+		
+		return Util.msgAndReplace(req, joinRd.getMsg(), "/");
 	}
 	
 }
