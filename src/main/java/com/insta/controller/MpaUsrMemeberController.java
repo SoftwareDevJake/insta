@@ -1,6 +1,7 @@
 package com.insta.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +48,36 @@ public class MpaUsrMemeberController {
 		}
 		
 		return Util.msgAndReplace(req, joinRd.getMsg(), "/");
+	}
+
+	@RequestMapping("/mpaUsr/member/login")
+	public String showLogin(HttpServletRequest req)
+	{
+		
+		return "/mpaUsr/member/login";
+	}
+	
+	@RequestMapping("/mpaUsr/member/doLogin")
+	public String doLogin(HttpServletRequest req, HttpSession session, String loginId, String loginPw, String redirectUrl)
+	{
+		Member member = memberService.getMemberByLoginId(loginId);
+		
+		if(member == null)
+		{
+			return Util.msgAndBack(req, loginId + "(은)는 존재하지 않는 로그인 아이디 입니다.");
+		}
+		
+		if(member.getLoginPw().equals(loginPw) == false)
+		{
+			return Util.msgAndBack(req, loginId + "비밀번호가 일치하지 않습니다..");
+		}
+		
+//		HttpSession session = req.getSession();
+		session.setAttribute("loginedMemberId", member.getId());
+		
+		String msg = "환영합니다.";
+		
+		return Util.msgAndReplace(req, msg, redirectUrl);
 	}
 	
 }

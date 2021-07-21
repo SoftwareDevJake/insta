@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:set var="pageTitle" value="<span><i class='far fa-clipboard'></i></span> <span>MEMBER JOIN</span>"/>
+<c:set var="pageTitle" value="<span><i class='fas fa-user-plus'></i></span> <span>MEMBER JOIN</span>"/>
 
 <%@ include file="../common/head.jspf"%>
 
@@ -110,14 +110,14 @@ function MemberJoin__submitForm(form) {
 				<label class="label">
 					로그인 비밀번호
 				</label>
-				<input class="textarea textarea-bordered w-full h-24" type="password" maxlength="30" placeholder="비밀번호를 입력해주세요."name="loginPw"></input>
+				<input class="input input-bordered w-full" type="password" maxlength="30" placeholder="비밀번호를 입력해주세요."name="loginPw"></input>
 			</div>
 			
 			<div class="form-control">
 				<label class="label">
 					로그인 비밀번호 확인
 				</label>
-				<input class="textarea textarea-bordered w-full h-24" type="password" maxlength="30" placeholder="비밀번호 확인을 입력해주세요."name="loginPwConfirm"></input>
+				<input class="input input-bordered w-full" type="password" maxlength="30" placeholder="비밀번호 확인을 입력해주세요."name="loginPwConfirm"></input>
 			</div>
 			
 			<div class="form-control">
