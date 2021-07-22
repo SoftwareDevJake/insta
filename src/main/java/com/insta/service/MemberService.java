@@ -25,5 +25,10 @@ public class MemberService {
 		
 		return new ResultData("S-1", "회원가입이 완료되었습니다.", "loginId", loginId);
 	}
+
+	public Member getMemberById(int id) {
+		
+		return memberDao.getMemberById(id);
+	}
 	
 }
